@@ -4,25 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e84f3f2a-bfff-4d33-b23f-d61c4aa00123" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ACP.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/acp-demo.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/acp-demo/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/acp-demo/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/acp-demo/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/acp-demo/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/acp-demo/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/acp-demo/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/acp-demo/src/main/java/com/edinburgh/acp_demo/AcpDemoApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/acp-demo/src/main/java/com/edinburgh/acp_demo/HelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/acp-demo/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/acp-demo/src/test/java/com/edinburgh/acp_demo/AcpDemoApplicationTests.java" beforeDir="false" />
-    </list>
+    <list default="true" id="e84f3f2a-bfff-4d33-b23f-d61c4aa00123" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,7 +74,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1770125693891</updated>
-      <workItem from="1770125696999" duration="759000" />
+      <workItem from="1770125696999" duration="1105000" />
     </task>
     <servers />
   </component>
