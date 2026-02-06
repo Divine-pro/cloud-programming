@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  # 1. The Database (PostgreSQL)
+  postgres:
+    image: postgres:15-alpine
+    container_name: cw1-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres    # Required by spec
+      - POSTGRES_PASSWORD=postgres # Required by spec
+      - POSTGRES_DB=acp           # Required by spec
+
+  # 2. The Fake AWS (Localstack) for S3 and DynamoDB
+  localstack:
+    image: localstack/localstack
+    container_name: cw1-localstack
+    ports:
+      - "4566:4566"
+    environment:
+      - SERVICES=s3,dynamodb   # We only need these two services
+      - AWS_DEFAULT_REGION=us-east-1 # Required by spec
+      - EDGE_PORT=4566
