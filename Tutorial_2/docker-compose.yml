@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  # 1. PostgreSQL Database (Standard SQL)
+  postgres:
+    image: postgres:15-alpine
+    container_name: tut2-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+
+  # 2. LocalStack (Fake AWS S3 & DynamoDB)
+  localstack:
+    image: localstack/localstack
+    container_name: tut2-localstack
+    ports:
+      - "4566:4566"            # The gateway port
+    environment:
+      - SERVICES=s3,dynamodb   # Enable S3 and DynamoDB
+      - AWS_DEFAULT_REGION=us-east-1
+      - EDGE_PORT=4566
