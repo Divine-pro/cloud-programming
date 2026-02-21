@@ -9,29 +9,32 @@ import lombok.Data;
 @Data
 public class Drone
 {
+
     @Id
     @Column(name = "drone_id")
-    private String id;
+    @JsonProperty("url")
+    private String url;
+
     private String name;
+    private int capacity;
+
+    @JsonProperty("max_moves")
+    private int maxMoves;
+
+    private boolean heat;
+    private boolean cool;
+
     @Embedded
     private Capability capability;
-    @JsonProperty("costPer100Moves")
+
     private double cost100;
+
     @Embeddable
     @Data
     public static class Capability
     {
-        @JsonProperty("cooling")
-        private boolean cool;
-        @JsonProperty("heating")
-        private boolean heat;
-        @JsonProperty("costPerMove")
-        private double cpm;
-        @JsonProperty("costInitial")
         private double ic;
-        @JsonProperty("costFinal")
         private double fc;
-        private int capacity;
-        private int maxMoves;
+        private double cpm;
     }
 }
