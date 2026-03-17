@@ -1,9 +1,10 @@
 package uk.ac.ed.inf.cw1service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
 import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
 import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedClient;
@@ -17,17 +18,23 @@ import java.net.URI;
 public class AwsConfig
 {
 
-    private static final URI LOCAL_STACK_URI = URI.create("http://localhost:4566");
     private static final Region REGION = Region.US_EAST_1;
     private static final StaticCredentialsProvider CREDENTIALS = StaticCredentialsProvider.create(
             AwsBasicCredentials.create("test", "test")
     );
 
+    // Dynamically pull the environment variables the auto-marker uses
+    @Value("${ACP_S3:http://localhost:4566}")
+    private String s3Endpoint;
+
+    @Value("${ACP_DYNAMODB:http://localhost:4566}")
+    private String dynamoEndpoint;
+
     @Bean
     public S3Client s3Client()
     {
         return S3Client.builder()
-                .endpointOverride(LOCAL_STACK_URI)
+                .endpointOverride(URI.create(s3Endpoint))
                 .region(REGION)
                 .credentialsProvider(CREDENTIALS)
                 .forcePathStyle(true) // Required for LocalStack
@@ -38,7 +45,7 @@ public class AwsConfig
     public DynamoDbClient dynamoDbClient()
     {
         return DynamoDbClient.builder()
-                .endpointOverride(LOCAL_STACK_URI)
+                .endpointOverride(URI.create(dynamoEndpoint))
                 .region(REGION)
                 .credentialsProvider(CREDENTIALS)
                 .build();
