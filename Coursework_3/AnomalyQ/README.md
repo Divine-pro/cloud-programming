@@ -175,4 +175,4 @@ AnomalyQ/
 
 ## AI Usage
 
-Claude (Anthropic) was used as a coding assistant throughout development for code generation, debugging and architecture guidance. All design decisions, problem framing and implementation choices were made by the student.
+Claude was used as a coding assistant for code generation, debugging and architecture guidance. All design decisions, problem framing and implementation choices were made by the student.
